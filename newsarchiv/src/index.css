@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --accent: #4F46E5;
+  --bg: #f1f5f9;
+  --bg-muted: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --sidebar: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --sidebar-muted: #64748b;
+  --sidebar-hover: #f8fafc;
+  --sidebar-active: #eef2ff;
+  --kw-mark-bg: #dbeafe;
+  --kw-mark-fg: #1d4ed8;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --bg: #0f172a;
+  --bg-muted: #1e293b;
+  --surface: #1e293b;
+  --border: #334155;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --sidebar: #1e293b;
+  --sidebar-border: #334155;
+  --sidebar-muted: #94a3b8;
+  --sidebar-hover: #334155;
+  --sidebar-active: #312e81;
+  --kw-mark-bg: #1e3a5f;
+  --kw-mark-fg: #93c5fd;
+}
+
+body {
+  font-family: "Source Sans 3", "Helvetica Neue", Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.font-serif {
+  font-family: "Source Serif 4", Georgia, serif;
+}
+
+.na-fade {
+  animation: na-fade-in 220ms ease-out;
+}
+
+@keyframes na-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes na-stagger-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.na-stagger > * {
+  animation: na-stagger-in 320ms ease-out both;
+}
+
+.na-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.na-stagger > *:nth-child(2) { animation-delay: 40ms; }
+.na-stagger > *:nth-child(3) { animation-delay: 80ms; }
+.na-stagger > *:nth-child(4) { animation-delay: 120ms; }
+.na-stagger > *:nth-child(5) { animation-delay: 160ms; }
+.na-stagger > *:nth-child(6) { animation-delay: 200ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .na-fade,
+  .na-stagger > * {
+    animation: none;
+  }
+}
+
+.na-sidebar {
+  background-color: var(--sidebar);
+  border: 1px solid var(--sidebar-border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 12px rgb(15 23 42 / 0.03);
+}
+
+.na-sidebar-heading {
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sidebar-muted);
+}
