@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pymongo
+pymilvus
+sentence-transformers
+redis
+python-dotenv
+feedparser
+requests
+langdetect
